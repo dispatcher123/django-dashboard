@@ -1,0 +1,92 @@
+{%  extends 'main.html' %}
+
+{% block content %}
+
+{%  include 'status.html' %}
+
+<br>
+
+<div class="row">
+	<div class="container">
+		<h5 class='container'>TOP 5 Articles</h5>
+		<hr>
+		<div class="card card-body">
+			<a class="btn btn-primary  btn-sm btn-block" href="{% url 'create' %}">Create Article</a>
+			<table class="table table-sm">
+				<tr>
+					<th>Title</th>
+					<th>Date Orderd</th>
+					<th>Category</th>
+					<th>Update</th>
+					<th>Remove</th>
+					<th>See Graphics</th>
+					<th>Views</th>
+					<th>Comments</th>
+					<th>Likes</th>
+				</tr>
+					
+				{% for posts_views_count in posts_views_counts %}
+					<tr>
+						<td>{{posts_views_count.title}}</td>
+						<td>{{posts_views_count.updated_date}}</td>
+						<td>{{posts_views_count.category}}</td>
+						<td><a href="{% url 'update_post' slug=posts_views_count.slug %}" class='btn btn-info'>Update</a></td>
+						<td><a href='{% url "delete" slug=posts_views_count.slug %}' class='btn btn-danger'>Delete</a></td>
+						<td><a href="{% url 'post_grap' slug=posts_views_count.slug %}" class='btn btn-warning'>See</a></td>
+						<td>{{posts_views_count.views}}</td>
+						<td>{{posts_views_count.comment.count}}</td>
+						<td>{{posts_views_count.likes.count}}</td>
+
+					</tr>
+				{% endfor %}
+
+		
+			</table>
+		</div>
+	</div>
+
+</div>
+
+<br>
+
+<div dlass='row'>
+	<div class="container">
+		<h5>USERS</h5>
+		<hr>
+		<div class="card card-body">
+			<a class="btn btn-primary  btn-sm btn-block" href="">Create Users</a>
+			<table class="table table-sm">
+				<tr>
+					<th>UserName</th>
+					<th>Email</th>
+					<th>Phone Number</th>
+					<th>Name Surname</th>
+					<th>Status</th>
+					<th>Online</th>
+				</tr>
+
+				{% for user in users %}
+					<tr>
+
+						<td>{{user.username}}</td>
+						<td>{{user.email}}</td>
+						<td>{{user.phone_number}}</td>
+						<td>{{user.first_name}} {{user.last_name}}</td>
+						<td>{{user.status}}</td>
+						
+						{% if user.is_active %}
+							<td>Online</td>
+						{% else %}
+							<td>Offline </td>
+						{% endif %}
+							
+					</tr>
+				{% endfor %}
+
+			</table>
+		</div>
+	</div>
+
+</div>
+
+{% endblock %}

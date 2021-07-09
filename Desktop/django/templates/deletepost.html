@@ -1,0 +1,12 @@
+{% extends 'main.html' %}
+
+
+{% block content %}
+  <p>Are You Sure Do You Want Delete? '{{post}}'</p>
+  <a href="{% url 'update_post' slug=post.slug %}">Cancel</a>
+  <form action="" method="POST">
+    {% csrf_token %}
+    
+    <button type="submit" class="btn btn-danger"> Delete  </button>
+  </form>
+{% endblock %}

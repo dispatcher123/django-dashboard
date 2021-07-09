@@ -1,0 +1,20 @@
+{% extends "main.html" %}
+{% load static %}
+
+{% block content %}
+<div class="fb-customerchat"
+ page_id="<PAGE_ID>">
+</div>
+<div class='row mt-5'>
+  {% for post in posts %}
+  <div class='col-xl-3 col-sm-5 col-12'>
+    <div class="card" style="width: 400px;">
+      <img class="card-img-top" src="{{post.image.url}}" alt="Card image cap">
+      <div class="card-body">
+        <p class="card-text"><a href="{% url 'user_post_detail' slug=post.slug %}" class='text-muted'>{{post.title}}</a></p>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

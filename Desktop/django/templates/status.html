@@ -1,0 +1,106 @@
+<style>
+	#total-orders{
+		background-color: #102c31;
+	}
+
+
+	#orders-delivered{
+		background-color: #05ec18da;
+	}
+
+	#orders-pending{
+		background-color: #7CD1C0;
+	}
+
+	#offline-users{
+		background-color: #cc2828;
+	}
+
+	#online-users{
+		background-color: #4b1dca;
+	}
+
+	#joined-users{
+		background-color: #b35e0f;
+	}
+</style>
+<br>
+
+<div class="row">
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white  mb-3" id="total-orders">
+			  	<div class="card-header">
+			  		<h5 class="card-title">Total Users</h5>
+			  	</div>
+			  	<div class="card-body">
+			    	<h3 class="card-title">{{users_count}}</h3>
+			  	</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white  mb-3" id="orders-delivered">
+			  	<div class="card-header">
+			  		<h5 class="card-title">Count of Articles</h5>
+			  	</div>
+			  	<div class="card-body">
+			    	<h3 class="card-title">{{posts_count}}</h3>
+			  	</div>
+			</div>
+		</div>
+	</div>
+    <div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white  mb-3" id="orders-pending">
+			  	<div class="card-header">
+			  		<h5 class="card-title">Count of Comments</h5>
+			  	</div>
+			  	<div class="card-body">
+			    	<h3 class="card-title">{{comment_count}}</h3>
+			  	</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class='row'>
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white  mb-3" id="joined-users">
+				  <div class="card-header">
+					  <h5 class="card-title">Today Joined Users</h5>
+				  </div>
+				  <div class="card-body">
+					<h3 class="card-title">{{joined_details}}</h3>
+				  </div>
+			</div>
+		</div>
+	</div>
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white  mb-3" id="online-users">
+				  <div class="card-header">
+					  
+					  <h5 class="card-title">Online Users</h5>
+				  </div>
+				  <div class="card-body">
+					<h3 class="card-title">{{online_users}}</h3>
+				  </div>
+			</div>
+		</div>
+	</div>
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white  mb-3" id="offline-users">
+				  <div class="card-header">
+					  <h5 class="card-title">Offline Users</h5>
+				  </div>
+				  <div class="card-body">
+					<h3 class="card-title">{{offline_users}}</h3>
+				  </div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,33 @@
+  
+#logo{
+	}
+
+	body{
+		background-color: #ebeff5;
+	}
+
+
+	#total-orders{
+		background-color: #102c31;
+	}
+
+
+	#orders-delivered{
+		background-color: #cc7ac5;
+	}
+
+	#orders-pending{
+		background-color: #7CD1C0;
+	}
+
+	#offline-users{
+		background-color: #cc2828;
+	}
+
+	#online-users{
+		background-color: #4b1dca;
+	}
+
+	#joined-users{
+		background-color: #b35e0f;
+	}

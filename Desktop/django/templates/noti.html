@@ -1,0 +1,40 @@
+{% extends "main.html" %}
+
+
+{% block content %}
+  <section class='section'>
+    <div class='container mt-5'>
+      
+      {% for notification in notifications  %}
+      
+      {% if notification.notification_type == 1 %}
+      <div class="card">
+        <div class="card-header">
+          Admin
+        </div>
+        <div class="card-body">
+          <blockquote class="blockquote mb-0">
+            <p>{{notification.sender.username}} Liked Your Post {{notification.post.title}}</p>
+            <footer class="blockquote-footer">{{notification.sender.email}} <cite title="Source Title">{{notification.date}}</cite></footer>
+          </blockquote>
+        </div>
+      </div>
+      {% elif notification.notification_type == 2 %}
+      <div class="card">
+        <div class="card-header">
+          Admin
+        </div>
+        <div class="card-body">
+          <blockquote class="blockquote mb-0">
+            <p>{{notification.sender.username}} Comment Your Post {{notification.post.title}}</p>
+            <footer class="blockquote-footer">{{notification.sender.email}} <cite title="Source Title">{{notification.date}}</cite></footer>
+          </blockquote>
+        </div>
+      </div>
+      {% endif %}
+        
+        
+      {% endfor %}
+    </div>
+  </section>
+{% endblock %}
