@@ -9,7 +9,7 @@
 - python manage.py makemigrations
 - python manage.py migrate
 - python manage.py createsuperuser ( create ur admin account)
-pipenv install django-ckeditor nad pipenv install stripe(for payment)
+-pipenv install django-ckeditor nad pipenv install stripe(for payment)
 
 - python manage.py runserver
 
