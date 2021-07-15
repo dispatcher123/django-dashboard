@@ -1,9 +1,9 @@
 # django-dashboard
 
 
-pipenv install django==3.2
+-pipenv install django==3.2
 
-pipenv shell
+-pipenv shell
 
 -delete db.sqlite3
 - python manage.py makemigrations
